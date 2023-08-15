@@ -169,6 +169,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+//
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *UartHandle) 
 {
  /* Set transmission flag: transfer complete*/
