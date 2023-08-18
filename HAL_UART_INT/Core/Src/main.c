@@ -263,6 +263,14 @@ uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len) {
 
 
 
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) 
+{
+  if(RingBuffer_GetDataLength(&txBuf) > 0) 
+  {
+    RingBuffer_Read(&txBuf, &txData, 1);
+    HAL_UART_Transmit_IT(huart, &txData, 1);
+  }
+}
 
 
 
