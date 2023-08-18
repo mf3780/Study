@@ -1,3 +1,10 @@
+uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len) {
+  if(HAL_UART_Transmit_IT(huart, pData, len) != HAL_OK) {
+    if(RingBuffer_Write(&txBuf, pData, len) != RING_BUFFER_OK)
+      return 0;
+  }
+  return 1;
+}
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -21,6 +28,8 @@
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
+#include "ringbuffer.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -52,7 +61,11 @@
 
 /* USER CODE BEGIN PV */
 char readBuf[1];
+uint8_t txData;
+
 __IO ITStatus UartReady = SET;
+RingBuffer txBuf, rxBuf;
+
 
 
 /* USER CODE END PV */
@@ -232,6 +245,35 @@ uint8_t processUserInput(uint8_t opt)
   HAL_UART_Transmit(&huart1, (uint8_t*)PROMPT, strlen(PROMPT), HAL_MAX_DELAY);
   return 1;
 }
+
+
+
+
+
+
+uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len) {
+  if(HAL_UART_Transmit_IT(huart, pData, len) != HAL_OK) {
+    if(RingBuffer_Write(&txBuf, pData, len) != RING_BUFFER_OK)
+      return 0;
+  }
+  return 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* USER CODE END 4 */
 

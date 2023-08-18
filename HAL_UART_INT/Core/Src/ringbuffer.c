@@ -37,6 +37,10 @@ uint16_t RingBuffer_Read(RingBuffer *buf, uint8_t *data, uint16_t len)
 	return counter;
 }
 
+
+//
+
+
 uint8_t RingBuffer_Write(RingBuffer *buf, uint8_t *data, uint16_t len)
 {
 	uint16_t counter = 0;
