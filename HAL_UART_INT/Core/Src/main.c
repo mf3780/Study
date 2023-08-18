@@ -1,10 +1,4 @@
-uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len) {
-  if(HAL_UART_Transmit_IT(huart, pData, len) != HAL_OK) {
-    if(RingBuffer_Write(&txBuf, pData, len) != RING_BUFFER_OK)
-      return 0;
-  }
-  return 1;
-}
+
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
@@ -25,10 +19,11 @@ uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len) {
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ringbuffer.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
-#include "ringbuffer.h"
+
 
 
 /* Private includes ----------------------------------------------------------*/
@@ -77,6 +72,7 @@ void performCriticalTasks(void);
 void printWelcomeMessage(void);
 uint8_t processUserInput(uint8_t opt);
 int8_t readUserInput(void);
+uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len);
 
 /* USER CODE END PFP */
 
@@ -198,8 +194,8 @@ void printWelcomeMessage(void) {
   char *strings[] = {"\033[0;0H", "\033[2J", WELCOME_MSG, MAIN_MENU, PROMPT};
 
   for (uint8_t i = 0; i < 5; i++) {
-    HAL_UART_Transmit_IT(&huart1, (uint8_t*)strings[i], strlen(strings[i]));
-    while (HAL_UART_GetState(&huart1) == HAL_UART_STATE_BUSY_TX || HAL_UART_GetState(&huart1) == HAL_UART_STATE_BUSY_TX_RX);
+   UART_Transmit(&huart1, (uint8_t*)strings[i], strlen(strings[i]));
+ 
   }
 }
 
@@ -228,7 +224,7 @@ uint8_t processUserInput(uint8_t opt)
     return 0;
 
   sprintf(msg, "%d", opt);
-  HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg));
 
   switch(opt) {
   case 1:
@@ -236,13 +232,13 @@ uint8_t processUserInput(uint8_t opt)
     break;
   case 2:
     sprintf(msg, "\r\nUSER BUTTON status: %s", HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_15) == GPIO_PIN_RESET ? "PRESSED" : "RELEASED");
-    HAL_UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+  UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg));
     break;
   case 3:
     return 2;
   };
 
-  HAL_UART_Transmit(&huart1, (uint8_t*)PROMPT, strlen(PROMPT), HAL_MAX_DELAY);
+ UART_Transmit(&huart1, (uint8_t*)PROMPT, strlen(PROMPT));
   return 1;
 }
 
@@ -251,8 +247,11 @@ uint8_t processUserInput(uint8_t opt)
 
 
 
-uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len) {
-  if(HAL_UART_Transmit_IT(huart, pData, len) != HAL_OK) {
+
+uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len)
+{
+  if(HAL_UART_Transmit_IT(huart, pData, len) != HAL_OK) 
+  {
     if(RingBuffer_Write(&txBuf, pData, len) != RING_BUFFER_OK)
       return 0;
   }
