@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ringbuffer.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
@@ -31,6 +30,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "ringbuffer.h"
 
 /* USER CODE END Includes */
 

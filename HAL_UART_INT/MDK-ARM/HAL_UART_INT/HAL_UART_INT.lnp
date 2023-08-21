@@ -6,6 +6,7 @@
 "hal_uart_int\usart.o"
 "hal_uart_int\stm32f1xx_it.o"
 "hal_uart_int\stm32f1xx_hal_msp.o"
+"hal_uart_int\ringbuffer.o"
 "hal_uart_int\stm32f1xx_hal_gpio_ex.o"
 "hal_uart_int\stm32f1xx_hal_i2c.o"
 "hal_uart_int\stm32f1xx_hal.o"
