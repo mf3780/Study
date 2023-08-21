@@ -27,10 +27,10 @@ hal_uart_int\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.
 hal_uart_int\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 hal_uart_int\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 hal_uart_int\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-hal_uart_int\main.o: ../Core/Inc/ringbuffer.h
 hal_uart_int\main.o: ../Core/Inc/i2c.h
 hal_uart_int\main.o: ../Core/Inc/usart.h
 hal_uart_int\main.o: ../Core/Inc/gpio.h
 hal_uart_int\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 hal_uart_int\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 hal_uart_int\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+hal_uart_int\main.o: ../Core/Inc/ringbuffer.h

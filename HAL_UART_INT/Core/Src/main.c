@@ -19,7 +19,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ringbuffer.h"
 #include "i2c.h"
 #include "usart.h"
 #include "gpio.h"
@@ -31,6 +30,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "ringbuffer.h"
 
 /* USER CODE END Includes */
 
@@ -95,7 +95,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  HAL_Init();
+	HAL_Init();
 
   /* USER CODE BEGIN Init */
 
@@ -246,7 +246,9 @@ UART_Transmit(&huart1, (uint8_t*)msg, strlen(msg));
 
 
 
-
+//****************************/
+//send one Byte, write onebyte to ringbuffer
+//*****************/
 
 uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len)
 {
@@ -260,6 +262,12 @@ uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len)
 
 
 
+/************ byli 20230823
+*Brief : TX complete INT recall  , read one charactor from ringbuffer &send
+*input: huart port
+*output: None
+*
+**************************/
 
 
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart) 

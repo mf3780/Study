@@ -1,7 +1,7 @@
 Dependencies for Project 'HAL_UART_INT', Target 'HAL_UART_INT': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
 F (startup_stm32f103x6.s)(0x64DD8A39)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_HAL_UART_INT-Id:\Users\lli.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-Id:\Users\lli.li\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include--pd "__UVISION_VERSION SETA 536" --pd "_RTE_ SETA 1" --pd "STM32F10X_LD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103x6.lst --xref -o hal_uart_int\startup_stm32f103x6.o --depend hal_uart_int\startup_stm32f103x6.d)
-F (../Core/Src/main.c)(0x64DF2E09)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_HAL_UART_INT-Id:\Users\lli.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-Id:\Users\lli.li\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o hal_uart_int\main.o --omf_browse hal_uart_int\main.crf --depend hal_uart_int\main.d)
+F (../Core/Src/main.c)(0x64E328BC)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_HAL_UART_INT-Id:\Users\lli.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-Id:\Users\lli.li\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o hal_uart_int\main.o --omf_browse hal_uart_int\main.crf --depend hal_uart_int\main.d)
 I (../Core/Inc/main.h)(0x64DD8A38)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64DD8A39)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x64DD8A38)
@@ -29,13 +29,13 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64DD8A39)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x64DD8A39)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64DD8A39)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x64DD8A39)
-I (../Core/Inc/ringbuffer.h)(0x64DDC936)
 I (../Core/Inc/i2c.h)(0x64DD8A38)
 I (../Core/Inc/usart.h)(0x64DD8A38)
 I (../Core/Inc/gpio.h)(0x64DD8A38)
 I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x60252374)
 I (D:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x60252374)
+I (../Core/Inc/ringbuffer.h)(0x64E328C6)
 F (../Core/Src/gpio.c)(0x64DD8A38)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_HAL_UART_INT-Id:\Users\lli.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-Id:\Users\lli.li\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o hal_uart_int\gpio.o --omf_browse hal_uart_int\gpio.crf --depend hal_uart_int\gpio.d)
 I (../Core/Inc/gpio.h)(0x64DD8A38)
 I (../Core/Inc/main.h)(0x64DD8A38)
@@ -180,6 +180,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x64DD8A39)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x64DD8A39)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x64DD8A39)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x64DD8A39)
+F (..\Core\Src\ringbuffer.c)(0x64DF126D)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_HAL_UART_INT-Id:\Users\lli.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-Id:\Users\lli.li\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o hal_uart_int\ringbuffer.o --omf_browse hal_uart_int\ringbuffer.crf --depend hal_uart_int\ringbuffer.d)
+I (../Core/Inc/ringbuffer.h)(0x64E328C6)
+I (D:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x6025237E)
+I (D:\Keil_v5\ARM\ARMCC\include\string.h)(0x6025237E)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x64DD8A39)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O3 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_HAL_UART_INT-Id:\Users\lli.li\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include-Id:\Users\lli.li\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include-D__UVISION_VERSION="536" -D_RTE_ -DSTM32F10X_LD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103x6-o hal_uart_int\stm32f1xx_hal_gpio_ex.o --omf_browse hal_uart_int\stm32f1xx_hal_gpio_ex.crf --depend hal_uart_int\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x64DD8A39)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x64DD8A38)
