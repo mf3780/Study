@@ -303,7 +303,11 @@
       <GroupNumber>2</GroupNumber>
       <FileNumber>8</FileNumber>
       <FileType>1</FileType>
+<<<<<<< HEAD
       <tvExp>1</tvExp>
+=======
+      <tvExp>0</tvExp>
+>>>>>>> 7e51bbe44eed90fb0eddca23a4eb37707cf15ebe
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Core\Src\ringbuffer.c</PathWithFileName>

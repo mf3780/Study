@@ -22,11 +22,21 @@ typedef enum {
 	RING_BUFFER_NO_SUFFICIENT_SPACE
 } RingBuffer_Status;
 
+<<<<<<< .mine
  uint16_t RingBuffer_GetDataLength(RingBuffer *buf);
  uint16_t RingBuffer_GetFreeSpace(RingBuffer *buf);
+=======
+extern uint16_t RingBuffer_GetDataLength(RingBuffer *buf);
+ uint16_t RingBuffer_GetFreeSpace(RingBuffer *buf);
+>>>>>>> .theirs
 void RingBuffer_Init(RingBuffer *buf);
+<<<<<<< .mine
  uint16_t RingBuffer_Read(RingBuffer *buf, uint8_t *data, uint16_t len);
  uint8_t RingBuffer_Write(RingBuffer *buf, uint8_t *data, uint16_t len);
+=======
+extern uint16_t RingBuffer_Read(RingBuffer *buf, uint8_t *data, uint16_t len);
+extern uint8_t RingBuffer_Write(RingBuffer *buf, uint8_t *data, uint16_t len);
+>>>>>>> .theirs
 
 #endif //#ifndef RING_BUFFER_H__
 
