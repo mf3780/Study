@@ -200,6 +200,13 @@ void printWelcomeMessage(void) {
   }
 }
 
+
+
+/***************************************************************
+*
+*
+*
+*****************************************************************/
 int8_t readUserInput(void) 
 {
   int8_t retVal = -1;
@@ -265,6 +272,7 @@ uint8_t UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t len)
 
 /************ byli 20230823
 *Brief : TX complete INT recall  , read one charactor from ringbuffer &send
+*        INT works @ every  charactor
 *input: huart port
 *output: None
 *
